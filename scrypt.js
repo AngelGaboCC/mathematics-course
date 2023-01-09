@@ -36,6 +36,24 @@ function ordenarLista(listaDesordenada) {
     return lista;
 }
 
-function calcularModa () {
+function calcularModa (lista) {
+    const listaCount = {};
+
+    for (let i = 0; i < lista.length; i++) {
+        const elemento = lista[i];
+
+        if(listaCount[elemento]) {
+            listaCount[elemento] += 1;
+        } else {
+            listaCount[elemento] = 1;
+        }
+    }
     
+
+    const listaArray = Object.entries(listaCount);
+    const listaBiOrdenada = listaArray.sort( (a,b) => a[1]-b[1] );
+
+    const modaEnArray = listaBiOrdenada[listaArray.length-1];
+    const moda= modaEnArray[0];
+    return moda;
 }
