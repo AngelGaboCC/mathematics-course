@@ -10,8 +10,9 @@ function calcularPromedio (lista) {
     return acumulador/lista.length;
 }
 
-function calcularMediana (lista) {
+function calcularMediana (listaDesordenada) {
 
+    const lista = ordenarLista(listaDesordenada);
     if (lista.length % 2 == 0)
     {
         const medianaParIndex1 = Math.floor(lista.length/ 2);
@@ -24,3 +25,17 @@ function calcularMediana (lista) {
     }
 }
 
+function ordenarLista(listaDesordenada) {
+
+    function ordenarListaSort(valorAcumulado, nuevoValor) {
+       return valorAcumulado - nuevoValor;
+    }
+
+    const lista = listaDesordenada.sort(ordenarListaSort);
+
+    return lista;
+}
+
+function calcularModa () {
+    
+}
