@@ -1,4 +1,7 @@
-function calcularPromedio (lista) {
+const CalculoMath = {}
+
+
+CalculoMath.calcularPromedio = function calcularPromedio (lista) {
    
     let acumulador = 0
 
@@ -10,9 +13,9 @@ function calcularPromedio (lista) {
     return acumulador/lista.length;
 }
 
-function calcularMediana (listaDesordenada) {
+CalculoMath.calcularMediana = function calcularMediana (listaDesordenada) {
 
-    const lista = ordenarLista(listaDesordenada);
+    const lista = CalculoMath.ordenarLista(listaDesordenada);
     if (lista.length % 2 == 0)
     {
         const medianaParIndex1 = Math.floor(lista.length/ 2);
@@ -25,7 +28,7 @@ function calcularMediana (listaDesordenada) {
     }
 }
 
-function ordenarLista(listaDesordenada) {
+CalculoMath.ordenarLista = function ordenarLista(listaDesordenada) {
 
     function ordenarListaSort(valorAcumulado, nuevoValor) {
        return valorAcumulado - nuevoValor;
@@ -36,7 +39,7 @@ function ordenarLista(listaDesordenada) {
     return lista;
 }
 
-function calcularModa (lista) {
+CalculoMath.calcularModa = function calcularModa (lista) {
     const listaCount = {};
 
     for (let i = 0; i < lista.length; i++) {
